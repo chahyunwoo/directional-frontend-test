@@ -1,8 +1,8 @@
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
 import { useAuthStore } from '@/features'
-import { ROUTE_PATHS, ROUTES } from '@/shared'
+import { ROUTES } from '@/shared'
 
-export const Route = createFileRoute(ROUTE_PATHS.PUBLIC_LAYOUT)({
+export const Route = createFileRoute('/_public')({
   beforeLoad: () => {
     const { isAuthenticated } = useAuthStore.getState()
     if (isAuthenticated) {
