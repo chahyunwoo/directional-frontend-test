@@ -9,20 +9,60 @@
 		"ignoreUnknown": false
 	},
 	"formatter": {
-		"enabled": true,
-		"indentStyle": "tab"
-	},
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "useEditorconfig": true
+  },
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
-		}
+			"recommended": false,
+			"nursery": {
+				"useSortedClasses": {
+          "level": "error",
+          "fix": "safe",
+          "options": {
+            "attributes": ["class", "className", "classList"],
+            "functions": ["clsx", "cva", "cn"]
+          }
+        }
+			}
+		},
+		"includes": ["**", "!dist"]
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "double"
-		}
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "asNeeded",
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto",
+      "bracketSpacing": true
+    }
 	},
+	"html": {
+    "formatter": {
+      "indentScriptAndStyle": false,
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "css": {
+    "parser": {
+      "cssModules": false,
+      "tailwindDirectives": true
+    }
+  },
 	"assist": {
 		"enabled": true,
 		"actions": {
